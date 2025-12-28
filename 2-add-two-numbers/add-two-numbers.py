@@ -17,7 +17,7 @@ class Solution:
             pointer1 = pointer1.next
             pointer2 = pointer2.next
 
-            if pointer1 is not None or pointer2 is not None:   # <-- small change: OR
+            if pointer1 is not None or pointer2 is not None:  
                 total.next = ListNode()
                 total = total.next
 
@@ -30,7 +30,7 @@ class Solution:
             total.val = digit
             pointer1 = pointer1.next
 
-            if pointer1 is not None:                          # create next only if needed
+            if pointer1 is not None:                          
                 total.next = ListNode()
                 total = total.next
 
