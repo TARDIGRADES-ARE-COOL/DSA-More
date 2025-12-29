@@ -6,19 +6,16 @@ class Solution:
             if i in my_dict.keys():
                 my_dict[i] +=1
             else:
-                        my_dict[i] = 1
-        for number, occurrence in my_dict.items():
-            if not result:
-                result.append(number)
-                continue
+                my_dict[i] = 1
 
-            pos = 0
-            while pos < len(result) and occurrence <= my_dict[result[pos]]:
-                pos += 1
-            result.insert(pos, number)
+        items = list(my_dict.items())
+        items = sorted(items, key=lambda pair: pair[1], reverse=True)
 
-        return result[:k]
 
+        for i in range(k):
+            result.append(items[i][0])
+
+        return result
 
         
     
