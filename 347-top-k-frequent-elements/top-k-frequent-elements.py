@@ -8,14 +8,19 @@ class Solution:
             else:
                 my_dict[i] = 1
 
-        items = list(my_dict.items())
-        items = sorted(items, key=lambda pair: pair[1], reverse=True)
-
-
-        for i in range(k):
-            result.append(items[i][0])
-
+        items = sorted(my_dict, key=my_dict.get, reverse=True)
+        result = items[:k]
         return result
+
+
+
+
+
+
+
+
+
+
 
         
     
