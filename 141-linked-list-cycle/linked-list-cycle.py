@@ -13,5 +13,5 @@ class Solution:
             slow = slow.next
             if slow == fast:
                 return True
-                break
+                
         return False
