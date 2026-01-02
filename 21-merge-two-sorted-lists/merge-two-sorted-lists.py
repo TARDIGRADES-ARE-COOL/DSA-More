@@ -5,20 +5,28 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        vals = []
-        while list1:
-            vals.append(list1.val)
-            list1 = list1.next
-        while list2:
-            vals.append(list2.val)
-            list2 = list2.next
-            
-        sorted_vals = sorted(vals)
-        dummy = ListNode()
-        curr = dummy
 
-        for v in sorted_vals:
-            curr.next = ListNode(v)
-            curr = curr.next
+        pointer1 = list1
+        pointer2 = list2
+        result = ListNode()
+        head = result
 
-        return dummy.next
+        while pointer1 is not None and pointer2 is not None:
+            if pointer1.val<= pointer2.val:
+                result.next = ListNode(pointer1.val)
+                result = result.next
+                pointer1 = pointer1.next
+            else:
+                result.next = ListNode(pointer2.val)
+                pointer2 = pointer2.next
+                result = result.next
+        while pointer2 is not None:
+            result.next = ListNode(pointer2.val)
+            pointer2 = pointer2.next
+            result = result.next
+        while pointer1 is not None :
+            result.next= ListNode(pointer1.val)
+            pointer1 = pointer1.next
+            result = result.next
+
+        return head.next
