@@ -1,15 +1,11 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        largestforeach = [nums[0]] #-2,-1,-4,0,-1,1,2,-3,1
+        result = [nums[0]]
 
-        for i in range(1,len(nums)):
-            largestforeach.append(max(nums[i], nums[i] + largestforeach[i-1]))
-            
-
-        return max(largestforeach)
-
-
-
+        for i in range(1, len(nums)):
+            result.append(max(nums[i], nums[i]+ result[i-1]))
         
+        return max(result)
+
 
         
