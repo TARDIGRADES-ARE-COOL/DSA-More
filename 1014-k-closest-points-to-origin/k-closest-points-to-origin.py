@@ -7,7 +7,9 @@ class Solution:
         
         for x , y in points:
             distance = (x**2) + (y**2)
-            heapq.heappush(heap, [distance, [x, y]])
+            heap.append([distance, [x, y]])
+
+        heapq.heapify(heap)
 
         for i in range(k):
             distance, cord = heapq.heappop(heap)
