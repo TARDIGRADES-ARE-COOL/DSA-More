@@ -3,9 +3,7 @@ class Solution:
         result = [nums[0]]
 
         for i in range(1, len(nums)):
-            result.append(max(nums[i], nums[i]+ result[i-1]))
+            result.append(max(nums[i], nums[i] + result[i-1]))
         
         return max(result)
-
-
         
