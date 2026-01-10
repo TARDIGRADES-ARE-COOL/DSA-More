@@ -1,11 +1,9 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        s = str(x)
-        z = []
-        y = []
-        for c in s:
-            z.append(c)
-        for i in s :
-            y.insert(0,i)
+
+        if x < 0:
+            return False
         
-        return y==z
+        digits_list = [int(d) for d in str(x)]
+
+        return digits_list == digits_list[::-1]
